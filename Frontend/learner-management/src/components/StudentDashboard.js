@@ -617,7 +617,8 @@ const StudentDashboard = () => {
     const fetchStudentData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const userEmail = localStorage.getItem('user_email');
+        const user = JSON.parse(localStorage.getItem('user'));
+        const userEmail = user?.email;
         
         console.log('Fetching student data with:', { token, userEmail });
 
@@ -765,7 +766,8 @@ const StudentDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const userEmail = localStorage.getItem('user_email');
+      const user = JSON.parse(localStorage.getItem('user'));
+      const userEmail = user?.email;
 
       // Format the data before sending
       const updateData = {
